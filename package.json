@@ -1,14 +1,12 @@
 {
   "name": "dojo-stores",
   "version": "2.0.0-pre",
-  "description": "Client side data management for Dojo 2",
-  "homepage": "http://dojotoolkit.org",
-  "bugs": {
-    "url": "https://github.com/dojo/stores/issues"
+  "description": "A new data store in TypeScript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maier49/store-research.git"
   },
   "license": "BSD-3-Clause",
-  "main": "main.js",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/dojo/stores.git"
@@ -17,32 +15,32 @@
     "prepublish": "grunt peerDepInstall",
     "test": "grunt test"
   },
+  "typings": "./dist/umd/dojo-stores.d.ts",
   "peerDependencies": {
     "@reactivex/rxjs": "5.0.0-beta.6",
-    "immutable": "^3.7.6",
-    "dojo-compose": ">=2.0.0-beta.10",
-    "dojo-core": ">=2.0.0-alpha.12",
-    "dojo-has": ">=2.0.0-alpha.4",
-    "dojo-shim": ">=2.0.0-alpha.4"
+    "dojo-compose": "2.0.0-beta.11",
+    "dojo-core": ">=2.0.0-alpha.11",
+    "dojo-shim": ">=2.0.0-alpha.3",
+    "dojo-has": ">=2.0.0-alpha.3"
   },
   "devDependencies": {
-    "codecov.io": "0.1.6",
-    "dojo-loader": ">=2.0.0-beta.5",
-    "dts-generator": "~1.7.0",
-    "glob": "^7.0.6",
+    "codecov.io": ">=0.1.6",
+    "dojo-loader": ">=2.0.0-beta",
+    "dts-generator": ">=1.7.0",
+    "glob": "^7.0.3",
     "grunt": "~1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-dojo2": ">=2.0.0-beta.16",
-    "grunt-text-replace": "^0.4.0",
-    "grunt-ts": "^5.5.1",
-    "grunt-tslint": "^3.2.1",
-    "grunt-typings": ">=0.1.5",
-    "intern": "^3.3.1",
-    "istanbul": "^0.4.5",
-    "remap-istanbul": "^0.6.4",
+    "grunt-contrib-clean": ">=1.0.0",
+    "grunt-contrib-copy": ">=1.0.0",
+    "grunt-contrib-watch": ">=1.0.0",
+    "grunt-dojo2": ">=2.0.0-beta.7",
+    "grunt-text-replace": ">=0.4.0",
+    "sinon": "1.14.1",
+    "grunt-ts": ">=5.5.1",
+    "grunt-tslint": ">=3.1.0",
+    "remap-istanbul": ">=0.6.3",
+    "intern": "^3.2.3",
+    "istanbul": "^0.4.3",
     "tslint": "next",
-    "typescript": "2.0.2"
+    "typescript": "2.1.0-dev.20160819"
   }
 }
