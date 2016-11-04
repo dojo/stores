@@ -2,7 +2,8 @@ import { OrderedMap, Map } from 'immutable';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { assign } from 'dojo-core/lang';
-import Promise, { isThenable } from 'dojo-shim/Promise';
+import { Thenable } from 'dojo-interfaces/shim';
+import Promise from 'dojo-shim/Promise';
 import WeakMap from 'dojo-shim/WeakMap';
 import compose, { ComposeFactory } from 'dojo-compose/compose';
 import createDestroyable, { Destroyable } from 'dojo-compose/mixins/createDestroyable';
@@ -182,6 +183,15 @@ export interface MemoryStoreFactory extends ComposeFactory<MemoryStore<Object>, 
  * The methods to decorate the MemoryStorePromise with
  */
 const storeMethods = [ 'get', 'put', 'add', 'patch', 'delete', 'fromArray' ];
+
+/**
+	* Returns true if a given value has a `then` method.
+	* @param {any} value The value to check if is Thenable
+	* @returns {is Thenable<T>} A type guard if the value is thenable
+	*/
+function isThenable<T>(value: any): value is Thenable<T> {
+	return value && typeof value.then === 'function';
+}
 
 /**
  * Utility function that takes a result and generates a MemoryStorePromise
