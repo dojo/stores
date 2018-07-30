@@ -1,3 +1,9 @@
+## The `@dojo/stores` repository has been deprecated and merged into [`@dojo/framework`](https://github.com/dojo/framework)
+
+You can read more about this change on our [blog](https://dojo.io/blog/). We will continue providing patches for `stores` and other Dojo 2 repositories, and a [CLI migration tool](https://github.com/dojo/cli-upgrade) is available to aid in migrating projects from v2 to v3.
+
+***
+
 # @dojo/stores
 
 [![Build Status](https://travis-ci.org/dojo/stores.svg?branch=master)](https://travis-ci.org/dojo/stores)
@@ -27,7 +33,7 @@ npm install @dojo/widget-core
  * All state operations are recorded per process and undoable via a process callback
  * Supports the optimistic pattern with the ability to roll back on a failure
  * Fully serializable operations and state
- 
+
 <!-- start-github-only -->
 
 -----
@@ -46,9 +52,6 @@ npm install @dojo/widget-core
      - [Executing Concurrent Commands](#executing-concurrent-commands)
      - [Decorating Processes](#decorating-processes)
         - [Decorating Multiple Processes](#decorating-multiple-processes)
- - [How Do I Contribute?](#how-do-i-contribute)
-    - [Setup Installation](#setup-installation)
-    - [Testing](#testing)
  - [Licensing Information](#licensing-information)
 
 -----
@@ -574,49 +577,6 @@ const myCallbackDecorator = createCallbackDecorator(myCallback);
 // use the callback decorator as normal
 const myProcess = createProcess('my-process', [ commandOne ], myCallbackDecorator());
 ```
-
-## How do I contribute?
-
-We appreciate your interest!  Please see the [Dojo 2 Meta Repository](https://github.com/dojo/meta#readme) for the
-Contributing Guidelines.
-
-### Code Style
-
-This repository uses [`prettier`](https://prettier.io/) for code styling rules and formatting. A pre-commit hook is installed automatically and configured to run `prettier` against all staged files as per the configuration in the project's `package.json`.
-
-An additional npm script to run `prettier` (with write set to `true`) against all `src` and `test` project files is available by running:
-
-```bash
-npm run prettier
-```
-
-### Installation
-
-To start working with this package, clone the repository and run `npm install`.
-
-In order to build the project run `grunt dev` or `grunt dist`.
-
-### Testing
-
-Test cases MUST be written using [Intern](https://theintern.github.io) using the Object test interface and Assert assertion interface.
-
-90% branch coverage MUST be provided for all code submitted to this repository, as reported by istanbul’s combined coverage results for all supported platforms.
-
-To test locally in node run:
-
-`grunt test`
-
-To test against browsers with a local selenium server run:
-
-`grunt test:local`
-
-To test against BrowserStack or Sauce Labs run:
-
-`grunt test:browserstack`
-
-or
-
-`grunt test:saucelabs`
 
 ## Licensing information
 
